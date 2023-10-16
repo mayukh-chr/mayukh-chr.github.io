@@ -22,7 +22,7 @@ title: Mayukh blog
 email: mayukhsaha.private@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Musings of some guy, maybe.
-baseurl: "mayukh-chr.github.io" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: mayukh-chr
 instagram_username:  mayukh.chr
