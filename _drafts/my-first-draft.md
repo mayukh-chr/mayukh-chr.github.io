@@ -11,4 +11,14 @@ b. Write about my life and things that I build like the opening act of _The Soci
 c. Post about my Japanese language lessons.
 d. Combine all of them.
 
-Obviously this particular post is going to take no definite shape or format and is a pilot episode in a very rough sense to provide context as to why this site exists. 
+Obviously this particular post is going to take no definite shape or format and is a pilot episode in a very rough sense to provide context as to why this site exists. Also because I want to get used to markdown
+
+
+Coming back to the main topic: The pixel 6a.
+
+At the time of writing, the pixel 8 and 8 pro are out, but this is about my experience with P6a.
+
+<font size = "6">The Camera:</font>
+
+
+The pixel's golden pot, a measly 12 megapixels fighting against the likes of samsungs 108 megapixels and coming out on top. All thanks the computational photography software embedded within the Tensor G1. And boy does it deliver  vibrant pictures
