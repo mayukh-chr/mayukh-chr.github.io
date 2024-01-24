@@ -1,13 +1,9 @@
-# The URL the site will be built for
-base_url = "https://example.com"
+# Be sure to change these!
+base_url = "mayukh-flzkvm1s6-mayukh-chr.vercel.app"
+title = "Mayukh theme"
 
-# Whether to automatically compile all Sass files in the sass directory
+# Sass compilation is required
 compile_sass = true
-
-# Whether to build a search index to be used later on by a JavaScript library
-build_search_index = false
-
-theme = "terminimal"
 
 # The theme supports feeds (RSS and ATOM)
 generate_feed = true
@@ -19,6 +15,8 @@ feed_filename = "atom.xml"
 taxonomies = [
     {name = "tags"}
 ]
+
+theme = "terminimal"
 
 # Code highlighting
 [markdown]
