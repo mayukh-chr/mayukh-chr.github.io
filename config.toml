@@ -1,4 +1,4 @@
-base_url = "/"
+base_url = "/website"
 title = "mayukh-chr"
 build_search_index = false
 generate_feed = true
