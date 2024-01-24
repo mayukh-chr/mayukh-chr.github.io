@@ -23,10 +23,7 @@ menu = [
     { name = "/about", url = "/about", weight = 3 },
 ]
 
-socials = [
-    { name = "twitter", url = "https://twitter.com/not_matthias", icon = "twitter" },
-    { name = "github", url = "https://github.com/not-matthias/", icon = "github" },
-]
+socials = []
 
 custom_css = []
 
