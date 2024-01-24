@@ -1,4 +1,4 @@
-base_url = "blog.ontheinterwebs.in/website"
+base_url = "/"
 title = "mayukh-chr"
 build_search_index = false
 generate_feed = true
