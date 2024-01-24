@@ -1,4 +1,4 @@
 +++
-paginate_by = 2
-sort_by = "date"
+[extra]
+section_path = "posts/_index.md"
 +++
