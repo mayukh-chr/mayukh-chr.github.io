@@ -1,5 +1,5 @@
 base_url = "/"
-title = "mayukh-chr"
+title = "Mayukh_chr"
 build_search_index = false
 generate_feed = true
 compile_sass = true
@@ -23,7 +23,10 @@ menu = [
     { name = "/about", url = "/about", weight = 3 },
 ]
 
-socials = []
+socials = [
+    {name = "instagram", url = "https://www.instagram.com/mayukh.chr/", icon = "instagram"},
+    {name = "github", url = "https://github.com/mayukh-chr/", icon = "github"},
+]
 
 custom_css = []
 
