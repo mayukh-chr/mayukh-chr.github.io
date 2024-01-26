@@ -1,7 +1,7 @@
 +++
 title = "Quake III's Fast Square Root Algorithm"
 date = "2024-01-26"
-draft = true
+draft = false
 +++
 
 # Introduction
