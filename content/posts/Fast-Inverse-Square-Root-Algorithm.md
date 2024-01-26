@@ -65,13 +65,11 @@ float q_rsqrt(float number)
 The ALU (Arithmetic and logic unit) in our CPUs have specialized system of gates built for addition and multiplication, but not for division and subtraction. Although subtraction has a quick fix with [2's complement method](https://www.geeksforgeeks.org/subtraction-of-two-numbers-using-2s-complement/), Division is still a more complex calculation, even more complex is square root. Intel and other manufacturers could, in theory add specialized gates for them, but it is very expensive. For thousands of calculations a second(like in our case), these gates are simply not feasable. So we need something that can be faster. The fast inverse square root is an approximation with an error of atmost 1%, while being about 3x as fast.
 
 # Floating point numbers
+\
+
 Before we proceed any further, I think it is required to mention how computers store floats. This is going to be very boring, so there's a TLDR after this.
 
-Floats are expressed in a similar fashion to scientific notations; called the [IEEE-754 standard](https://en.wikipedia.org/wiki/IEEE_754) to put it simply:
-
-- $42069$ in scientific notation is $4.2069 \times 10^3$ \
-- $0.0042069$ in scientific notation is $4.2069 \times 10^{-3}$ \
-- $42069$ in binary is $1010010001010101$ or $1.010010001010101 \times 2^{15}$ \
+Floats are expressed in a similar fashion to scientific notations; namely the [IEEE-754 standard](https://en.wikipedia.org/wiki/IEEE_754).
 
 The smart folks at IEEE set it in this form\
 
@@ -240,7 +238,7 @@ This is just reversing the steps of the evil bit hack to get back the actual app
 y  = y * ( threehalfs - ( x2 * y * y ) );
 ```
 
-After the previous step, we have a pretty good approximation but we did pick up some error terms here and there, but we can use [newtown's approximation](https://en.wikipedia.org/wiki/Newton%27s_method) to get a really good approximation.
+After the previous step, we have a pretty good approximation but we did pick up some error terms here and there, but we can use [newtown's approximation](https://en.wikipedia.org/wiki/Newton%27s_method) to get a close result.
 
 Newton's method finds a root of an equation. ie it finds an $x$ for which $f(x) = 0$. You repeat this process until you're satisfied with your solution. But in this case, our initial approximation is good enough that one iteration of it gets our error to $\leq1%$.\
 
@@ -257,7 +255,7 @@ $$\therefore y = \frac{1}{\sqrt{x}}$$
 
 therefore using newton's method:
 
-$$f(y) = \frac{1}{y^2}-x and  f\prime(y) =  -\frac{2}{y^3}$$
+$$f(y) = \frac{1}{y^2}-x \space and \space  f\prime(y) =  -\frac{2}{y^3}$$
 
 $$y_{n+1} = y_n - \frac{f(y_n)}{f\prime(y_n)}$$
 which is equal to 
