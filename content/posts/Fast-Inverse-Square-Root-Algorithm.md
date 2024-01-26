@@ -10,7 +10,7 @@ draft = false
 
 In this piece of writing I will try my best on explaining the mathematical, physical and computational reason of it's existence and why it is such an ingenius hack.\
 
-The reason I am doing this because this algorithm implements concepts from statistical approximation in mathematics, 3D-vectors in theoretical physics, the numerical data storing system in computer architecture, C language, and some bitwise black magic. All of which were all taught to me in my 1st and 2nd years of university, just seperately.\
+The reason I am doing this is because this algorithm implements concepts from statistical approximation in mathematics, 3D-vectors in theoretical physics, the numerical data storing system in computer architecture, C language, and some bitwise black magic. All of which were taught to me in my 1st and 2nd years of university, just seperately.\
 
 # The Code
 
@@ -37,15 +37,15 @@ float q_rsqrt(float number)
 
 # Why does a game engine need this function?
 
-If you want to implement lightng or reflections in your game engine, it is helpful if the vectors in your calculations are *normalized* to have a magnitude 1, if you don't normalise it, things can go wrong during computations.\
+If you want to implement lighting or reflections in your game engine, it is helpful if the vectors in your calculations are *normalised* to have magnitude 1; If you don't normalise it, things can go wrong during computations.\
 \
-For normalizing a 3D vector:\
+For normalising a 3D vector:\
 $$\hat{a} = \frac{\vec{A}}{\sqrt{x^2+y^2+z^2}}$$ or \
 $$\hat{a} = \vec{A}*\frac{1}{\sqrt{x^2+y^2+z^2}}$$ ie.\
 
 $$\hat{a} = \vec{A}*\frac{1}{|A|}$$
 
-multiplication and addition is easy for computers. For reasons I will mention, the square root is relatively, an extremely slow piece of computation, and division is not much better either.\
+multiplication and addition is easy for computers. For reasons I will mention later, the square root is relatively, an extremely slow piece of computation. And division is not much better either.\
 
 For a game engine, this normalisation is carried out over several thousands of surfaces each second. And these slow pieces of computations break the game because it can't catch up with the real-time need of rendering these surfaces. Therefore we need a solution that can solve this problem, even by a little bit.
 
@@ -62,7 +62,7 @@ float q_rsqrt(float number)
 }
 ```
 
-The ALU (Arithmetic and logic unit) in our CPUs have specialized system of gates built for addition and multiplication, but not for division and subtraction. Although subtraction has a quick fix with [2's complement method](https://www.geeksforgeeks.org/subtraction-of-two-numbers-using-2s-complement/), Division is still a more complex calculation, even more complex is square root. Intel and other manufacturers could, in theory add specialized gates for them, but it is very expensive. For thousands of calculations a second(like in our case), these gates arw simply not feasable. So we need something that can be faster. The fast inverse square root is an approximation with an error of atmost 1%, while being about 3x as fast.
+The ALU (Arithmetic and logic unit) in our CPUs have specialized system of gates built for addition and multiplication, but not for division and subtraction. Although subtraction has a quick fix with [2's complement method](https://www.geeksforgeeks.org/subtraction-of-two-numbers-using-2s-complement/), Division is still a more complex calculation, even more complex is square root. Intel and other manufacturers could, in theory add specialized gates for them, but it is very expensive. For thousands of calculations a second(like in our case), these gates are simply not feasable. So we need something that can be faster. The fast inverse square root is an approximation with an error of atmost 1%, while being about 3x as fast.
 
 # Floating point numbers
 Before we proceed any further, I think it is required to mention how computers store floats. This is going to be very boring, so there's a TLDR after this.
