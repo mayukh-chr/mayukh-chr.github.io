@@ -24,8 +24,9 @@ menu = [
 ]
 
 socials = [
+    {name = "github", url = "https://github.com/mayukh-chr/", icon = "github"}
+    {name = "linkedin", url = "https://www.linkedin.com/in/mayukh-saha-125670220/",icon = "linkedin"},
     {name = "instagram", url = "https://www.instagram.com/mayukh.chr/", icon = "instagram"},
-    {name = "github", url = "https://github.com/mayukh-chr/", icon = "github"},
 ]
 
 custom_css = []
