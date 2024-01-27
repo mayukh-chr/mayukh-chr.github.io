@@ -4,5 +4,4 @@ path = "about"
 +++
 
 
-Programmer by mind.\
-Designer by heart. 
+Stuck somewhere between product and design.
