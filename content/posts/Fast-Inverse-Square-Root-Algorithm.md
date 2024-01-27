@@ -77,7 +77,7 @@ The smart folks at IEEE set it in this form\
 - The first bit is a sign bit, which is 1 when the number is negative and 0 when positive. Since we'll be dealing exclusively with positive numbers with this algorithm (we would never need to calculate $\frac{1}{\sqrt{-5}}$ or something) the sign bit will always be 0. &nbsp; 
 
 - It's followed by 8 bits of exponents in Excess-127 format. For context, you can use 8 bits represent exponents from 0 to 255; However, we need to represent fractions (ie, negative exponents) too, so we shift the exponents by 127. Now we can represent exponents from -127 to 128; so the power 4, instead of 00000100, will be represented as 10000011. This shifting is called Excess-127 (because we're shifting exponents by 127). &nbsp; 
-- The remaining 23 bits store the fractional part, from 1.0000000.... to 1.11111.... (so $[1, 2)$ in decimal). But, the IEEE realized that the first digit in scientific notation will always be 1, so they made it part of the equation. Therefore, the 23 bits now store only the Mantissa (The part after the decimal point).\
+- The remaining 23 bits store the fractional part, from 1.0000000.... to 1.11111.... (so $[1, 2)$ in binary). But, the IEEE realized that the first digit in scientific notation will always be 1, so they made it part of the equation. Therefore, the 23 bits now store only the Mantissa (The part after the decimal point).\
 
 Note: What we've discussed just now is actually a subset of the IEEE-754 standard, which describes normalised numbers; denormalised numbers, NaN (not a number), 0 and -0 will never be accepted by our algorithm, so we won't discuss them here.
 
