@@ -74,15 +74,12 @@ Floats are expressed in a similar fashion to scientific notations; namely the [I
 The smart folks at IEEE set it in this form\
 
 ![images](/images/Untitled-1.svg)
-- Where the sign bit is 1 when the number is negative, 0 when positive. Since we'll be dealing exclusively with positive numbers with this algorithm (we would never need to calculate $\frac{1}{\sqrt{-5}}$ or something) the sign bit will always be 0.\
+- The first bit is a sign bit, which is 1 when the number is negative and 0 when positive. Since we'll be dealing exclusively with positive numbers with this algorithm (we would never need to calculate $\frac{1}{\sqrt{-5}}$ or something) the sign bit will always be 0. &nbsp; 
 
+- It's followed by 8 bits of exponents in Excess-127 format. For context, you can use 8 bits represent exponents from 0 to 255; However, we need to represent fractions (ie, negative exponents) too, so we shift the exponents by 127. Now we can represent exponents from -127 to 128; so the power 4, instead of 00000100, will be represented as 10000011. This shifting is called Excess-127 (because we're shifting exponents by 127). &nbsp; 
+- The remaining 23 bits store the fractional part, from 1.0000000.... to 1.11111.... (so $[1, 2)$ in decimal). But, the IEEE realized that the first digit in scientific notation will always be 1, so they made it part of the equation. Therefore, the 23 bits now store only the Mantissa (The part after the decimal point).\
 
-
-- 8 bits of Expoenents in Excess-127 format, you can represent exponents from 0 to 255 but we need to represent fractions (ie, negative exponents) too, so we shift the explonents by 127 so now we can represent explonents from -127 to 128 so the power 4, instead of 00000100, will be represented as 10000011 (this is where the term excess-127 comes from because the exponent is added by 127).
-
-- The remaining 23 bits store the fractional part, from 1.0000000.... to 1.11111.... so [1, 2). But IEEE realized that the first digit will always be 1, so they made it part of the equation. Therefore the 23 bits now store only the Mantissa. (The part after the decimal point).\
-
-The thing we discussed just now is what's called normalized numbers; IEEE also specifies denormalised numbers, NaN (Not a number) and two zeros (0 and -0). but this algorithm will never take those inputs and therefore won't be discussed here.
+Note: What we've discussed just now is actually a subset of the IEEE-754 standard, which describes normalised numbers; denormalised numbers, NaN (not a number), 0 and -0 will never be accepted by our algorithm, so we won't discuss them here.
 
 ## TLDR
 
@@ -143,7 +140,7 @@ The next two aren't that bad either:
 ```
 But then, all hell seems to break loose, what is _i_? What is 0x5f3759df? Why declare a variable for 1.5 and not for 0x5f3759df? Why are there so many pointers?\
 
-And the comments don't seem to help either. But it hints that there's three steps in the process, namely:
+The comments don't seem to help either. But it hints that there's three steps in the process, namely:
 
 - evil floating point bit hack
 - what the fuck
@@ -174,9 +171,9 @@ Now our number can go through bit manipulations.
 i  = 0x5f3759df - ( i >> 1 ); 
 ```
 
-Let's talk about bit manipulation, namely shifting. In binary, shifting left doubles the number and shifting right halves it, while rounding it off.
+Let's talk about bit manipulation, namely shifting. In binary, shifting left doubles the number and shifting right halves it, while rounding it off.\
 
-- x = 1101 = 13
+- Let: x = 1101 = 13
 - (x << 1) = 11010 = 26
 - (x >> 1) = 110 = 6
 
@@ -203,7 +200,7 @@ $$-\frac{1}{2}log_2(y)$$
 Calculating this is stupidly easy. "But you just told me that division is difficult!!1!!" Yes but remember bit shifting???\
 Just do `-(i >> 1)` and you're all set.
 
-Now you might be wondering how and why do we have `0x5f3759df` in the line. Go to the end of [this](http://mayukh-chr.github.io/posts/draft-fast-inverse-square-root-algorithm/#bits-and-numbers) and read "abeit with some scaling and shifting.". Meaning that we need to scale and shift it back by some constant.
+Now you might be wondering how and why do we have `0x5f3759df` in the line. Go to the end of [this](https://mayukh-chr.github.io/posts/fast-inverse-square-root-algorithm/#bits-and-numbers) and read "abeit with some scaling and shifting.". Meaning that we need to scale and shift it back by some constant.
 
 Let $$log(\Gamma) = log\left(\frac{1}{\sqrt{y}}\right)$$
 
@@ -238,7 +235,7 @@ This is just reversing the steps of the evil bit hack to get back the actual app
 y  = y * ( threehalfs - ( x2 * y * y ) );
 ```
 
-After the previous step, we have a pretty good approximation but we did pick up some error terms here and there, but we can use [newtown's approximation](https://en.wikipedia.org/wiki/Newton%27s_method) to get a close result.
+After the previous step, we have a pretty good approximation but we did pick up some error terms here and there, but we can use [Newton's approximation](https://en.wikipedia.org/wiki/Newton%27s_method) to get a close result.
 
 Newton's method finds a root of an equation. ie it finds an $x$ for which $f(x) = 0$. You repeat this process until you're satisfied with your solution. But in this case, our initial approximation is good enough that one iteration of it gets our error to $\leq1%$.\
 
