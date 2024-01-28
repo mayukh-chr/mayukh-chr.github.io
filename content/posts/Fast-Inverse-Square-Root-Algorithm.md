@@ -1,5 +1,5 @@
 +++
-title = "Quake III's Fast Square Root Algorithm"
+title = "Quake III's Fast Inverse Square Root Algorithm"
 date = "2024-01-26"
 draft = false
 +++
