@@ -21,12 +21,12 @@ menu = [
     { name = "/posts", url = "/posts", weight = 1 },
     { name = "/projects", url = "/projects", weight = 2 },
     { name = "/about", url = "/about", weight = 3 },
+    { name = "/CV", url = "/cv.pdf", weight = 4}
 ]
 
 socials = [
     {name = "github", url = "https://github.com/mayukh-chr/", icon = "github"},
     {name = "linkedin", url = "https://www.linkedin.com/in/mayukh-chr/",icon = "linkedin"},
-    {name = "instagram", url = "https://www.instagram.com/mayukh.chr/", icon = "instagram"},
     {name = "spotify", url = "https://open.spotify.com/user/zuumtdcue8fsfcq8owwju8i8x?si=8c3c8744363f4d95", icon = "spotify"},
     {name = "twitter", url = "https://twitter.com/mayukh_chr", icon = "twitter"},
 ]
