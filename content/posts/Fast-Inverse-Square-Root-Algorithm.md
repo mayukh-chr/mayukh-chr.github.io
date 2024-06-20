@@ -73,7 +73,7 @@ Floats are expressed in a similar fashion to scientific notations; namely the [I
 
 The smart folks at IEEE set it in this form\
 
-![images](/images/Untitled-1.svg)
+![images](/images/p1/Untitled-1.svg)
 - The first bit is a sign bit, which is 1 when the number is negative and 0 when positive. Since we'll be dealing exclusively with positive numbers with this algorithm (we would never need to calculate $\frac{1}{\sqrt{-5}}$ or something) the sign bit will always be 0. &nbsp; 
 
 - It's followed by 8 bits of exponents in Excess-127 format. For context, you can use 8 bits represent exponents from 0 to 255; However, we need to represent fractions (ie, negative exponents) too, so we shift the exponents by 127. Now we can represent exponents from -127 to 128; so the power 4, instead of 00000100, will be represented as 10000011. This shifting is called Excess-127 (because we're shifting exponents by 127). &nbsp; 
