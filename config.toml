@@ -1,5 +1,5 @@
 base_url = "/"
-title = "Mayukh_chr"
+title = "mayukh_chr"
 build_search_index = false
 generate_feed = true
 compile_sass = true
