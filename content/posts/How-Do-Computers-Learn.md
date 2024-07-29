@@ -8,22 +8,22 @@ draft = false
 
 &emsp; &emsp; At the beginning of this year, a technical club at my university hosted a "Build an AI/ML model" workshop aimed towards teaching freshers how to get started with AI. The workshop involved building a digit classification model that recognised handwritten digits using TensorFlow on Jupyter notebooks. Although it was a great beginners tutorial on TensorFlow, I felt dissatisfied with that because it didn't explain how the model actually "learnt", improving its weights and reducing the loss function.\
 
-&emsp; &emsp; As much I'd like to go into detail about every part of the code line by line like my previous blog, It would be simply too cumbersome for my liking as a. The code is relatively bigger, and b. I find the mathematics behind it more fascinating. Additionally, I would highly suggest reading [this textbook](http://neuralnetworksanddeeplearning.com/) by Michael Nielsen to have a more thorough understanding.\
+&emsp; &emsp; As much I'd like to go into detail about every part of the code line by line like my previous blog, it would be simply too cumbersome for my liking as a.) The code is relatively bigger, and b.) I find the mathematics behind it more fascinating. Additionally, I would highly suggest reading [this textbook](http://neuralnetworksanddeeplearning.com/) by Michael Nielsen to have a more thorough understanding.\
 
 # Neurons
 
- The foundation of any neural network, whether biological or artificial, lies in its basic building blocks: neurons. In the human brain, neurons are specialized cells that transmit information through electrical and chemical signals. They form complex networks that enable us to think, learn, and perform various cognitive tasks. Similarly, in the realm of artificial intelligence, neurons are the computational units that process and transmit data within a network, enabling the system to learn and make decisions.
+The foundation of any neural network, whether biological or artificial, lies in its basic building blocks: neurons. In the human brain, neurons are specialized cells that transmit information through electrical and chemical signals. They form complex networks that enable us to think, learn, and perform various cognitive tasks. Similarly, in the realm of artificial intelligence, neurons are the computational units that process and transmit data within a network, enabling the system to learn and make decisions.
 
     When we talk about artificial neurons, we're referring to mathematical functions that receive one or more inputs, process them, and produce an output. These artificial neurons are designed to mimic the behavior of their biological counterparts, albeit in a much simpler and more abstract form. 
 
 ## Perceptron
 
 &emsp; &emsp; Similar to the neurons in your brain, computer neurons re-emit signals recieved from other sources.
-Perhaps the simplest form of a computer neuron would be a [perceptron](https://books.google.ca/books/about/Principles_of_neurodynamics.html?id=7FhRAAAAMAAJ&hl=en)
+Perhaps the simplest form of a computer neuron would be a [perceptron](https://books.google.ca/books/about/Principles_of_neurodynamics.html?id=7FhRAAAAMAAJ&hl=en).
 
 ![perceptron](/images/p2/perceptron.png)
 
-A perceptron takes in one or more binary inputs (0/1) and outputs one binary value. it is calculated by\
+A perceptron takes in one or more binary inputs (0/1) and outputs one binary value. It is calculated by\
 
 $$
 output =
@@ -45,16 +45,18 @@ output =
 \tag{2}
 $$
 
-That's the basic mathematical model. It says yes or no depending on how the inputs are formed, a easy example would be imagine your friends call you for a weekend getaway at the beach, your decision to go depends on 3 factors:\
+That's the basic mathematical model. It says yes or no depending on how the inputs are formed, A simple example would be: imagine your friends call you for a weekend getaway at the beach. Your decision to go depends on three factors:\
 
 1. Is your boyfriend/girlfriend joining?
 2. Is it going to rain?
-3. Are you going by car?
+3. Are you going by car?\end
 
-&emsp; &emsp; You place option 1 as most important, and weigh that in at $w_1 = 3$, then option 2 at $w_2  = 2$ and $w_3 = 1$
-$x_i$ basically means "is option $i$ true or not, if it is $x_i = 1$ else its $0$.\
+- You place option 1 as the most important, and weigh that in at $w_1 = 3$
+- You weigh in option 2 at $w_2  = 2$ and 
+- $w_3 = 1$\
 
-assuming a bias $b = 5$. and\
+$x_i$ basically means "is option $i$ true or not, if it is $x_i = 1$ else its $0$.
+Assuming a bias $b = 5$. \
 
 if option 1, 3 are true and 2 is false:
 
@@ -86,7 +88,7 @@ It looks the same as the perceptrons that we saw earlier. Altho it has a few cha
 1. Instead of the inputs being 0 or 1, these inputs can take on any value between 0 and 1, eg: 0.532... could be one input.
 2. Just like a perceptron, it has weights for each input $w1, w2...$ and bias b. But the output is not 0 or 1. Its $\sigma(w \cdot x + b)$ where the [sigma function](https://en.wikipedia.org/wiki/Sigmoid_function) (also called the logistic function) is:
 
-$$ \sigma(z) = \frac{1}{1 + e^{-z}} $$
+$$ \sigma(z) = \frac{1}{1 + e^{-z}} \tag{3}$$
 
 &emsp; &emsp; At first it looks a lot more complicated than the perceptron but suppose $z≡w⋅x+b$ is a large positive number. Then $e−z≈0$ and so $σ(z)≈1$. In other words, when $z=w⋅x+b$ is large and positive, the output from the sigmoid neuron is approximately 1, just as it would have been for a perceptron. Suppose on the other hand that $z=w⋅x+b$ is very negative. Then $e−z→∞$, and $σ(z)≈0$. So when z=w⋅x+b is very negative, the behaviour of a sigmoid neuron also closely approximates a perceptron.
 
@@ -96,6 +98,7 @@ So basically a sigma function is a smoother version of the step function. Which 
 
 $$
 \Delta \text{output} \approx \sum_j \frac{\partial \text{output}}{\partial w_j} \Delta w_j + \frac{\partial \text{output}}{\partial b} \Delta b
+\tag{4}
 $$
 
 &emsp; &emsp; This can be useful, for example, if we want to use the output value to represent the average intensity of the pixels in an image input to a neural network. But sometimes it can be a nuisance. Suppose we want the output from the network to indicate either "the input image is a 9" or "the input image is not a 9". Obviously, it'd be easiest to do this if the output was a 0 or a 1, as in a perceptron. But in practice we can set up a convention to deal with this, for example, by deciding to interpret any output of at least 0.5 as indicating a "9", and any output less than 0.5 as indicating "not a 9".
@@ -135,7 +138,7 @@ We'll use the notation $x$ to denote a training input. It'll be convenient to re
 
 &emsp; &emsp; In order to quantify how correct the model is we could introduce a "cost" function (also called as loss function). Similar to how your teacher gives you varying amount of marks on a answer depending on how correct it is. This function allows us to determine how correct the model is and how confident it gives its results.
 
-$$C(w,b) = {\frac1 {2n}} \sum_x ||y(x) - a||^2$$
+$$C(w,b) = {\frac1 {2n}} \sum_x ||y(x) - a||^2 \tag{5}$$
 
 This equation is called [$mean \space squared \space error$](https://statisticsbyjim.com/regression/mean-squared-error-mse/) or a quadratic cost function. Here, \
 
@@ -162,7 +165,7 @@ $$\nabla C \equiv \left(\frac{\partial C}{\partial v_1}, \frac{\partial C}{\part
 
 With these definitions, the expression for $ΔC$ can be rewritten as
 
-$$\Delta C \approx \nabla C \cdot \Delta v$$
+$$\Delta C \approx \nabla C \cdot \Delta v $$
 
 This equation allows us to choose Δv in a way so as to make ΔC negative. In particular, suppose we choose
 
@@ -174,7 +177,7 @@ $$ΔC≈−η∇C⋅∇C=−η∥∇C∥^2$$
 
 Because $∥∇C∥2≥0$, this guarantees that $ΔC≤0$, i.e., $C$ will always decrease, never increase.
 
-$$\therefore v→v'=v−η∇C$$
+$$\therefore v→v'=v−η∇C \tag{6}$$
 
 If we keep doing this, over and over, we'll keep decreasing $C$ until we reach (or get close to) a global minimum.\
 
@@ -191,7 +194,7 @@ $$b'_l = b_l - \eta \frac{\partial C}{\partial b_l}$$
 
 &emsp; &emsp; We can think of stochastic gradient descent as being like political polling: it's much easier to sample a small mini-batch than it is to apply gradient descent to the full batch, just as carrying out a poll is easier than running a full election.
 
-And voila you should be able to train a model to classify digits using pure math. An implementation of it is given in python below.
+All this information until now should be enough for implementing the classification model. An implementation in python is written below with numpy.
 
 # The code
 
