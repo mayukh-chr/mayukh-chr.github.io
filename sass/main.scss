@@ -17,6 +17,7 @@
 }
 
 html {
+  transition: background-color 0.5s ease, color 0.5s ease; //light to dark transision
   background-color: var(--bg-0);
   color: var(--text-0);
   font-family: var(--text-font);

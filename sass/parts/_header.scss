@@ -52,6 +52,7 @@ header .main {
 .social {
   border-bottom: unset;
   background-image: unset;
+  transition: background-color 0.5s ease, color 0.5s ease; //light to dark transision
   padding: 2px;
 }
 
