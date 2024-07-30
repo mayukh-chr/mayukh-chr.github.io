@@ -45,3 +45,19 @@
   src: url('../fonts/RobotoSlab/RobotoSlab-SemiBold.ttf'), local('ttf');
   font-display: swap;
 }
+
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/Quicksand/Quicksand-Medium.ttf'), local('ttf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/Quicksand/Quicksand-SemiBold.ttf'), local('ttf');
+  font-display: swap;
+}
