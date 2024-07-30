@@ -224,10 +224,10 @@ def init_params(size):
     return W1,b1,W2,b2
 
 def forward_propagation(X,W1,b1,W2,b2):
-    Z1 = W1.dot(X) + b1 #10, m
-    A1 = sigmoid(Z1) # 10,m
-    Z2 = W2.dot(A1) + b2 #10,m
-    A2 = sigmoid(Z2) #10,m
+    Z1 = W1.dot(X) + b1 
+    A1 = sigmoid(Z1) 
+    Z2 = W2.dot(A1) + b2
+    A2 = sigmoid(Z2)
     return Z1, A1, Z2, A2
 
 def mse_loss(A2, Y, m):
