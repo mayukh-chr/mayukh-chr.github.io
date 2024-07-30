@@ -29,3 +29,19 @@
   src: url('../fonts/SpaceGrotesk/SpaceGrotesk-Bold.ttf'), local('ttf');
   font-display: swap;
 }
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/RobotoSlab/RobotoSlab-Regular.ttf'), local('ttf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/RobotoSlab/RobotoSlab-SemiBold.ttf'), local('ttf');
+  font-display: swap;
+}
