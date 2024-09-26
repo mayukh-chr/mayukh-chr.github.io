@@ -27,8 +27,7 @@ menu = [
 socials = [
     {name = "github", url = "https://github.com/mayukh-chr/", icon = "github"},
     {name = "linkedin", url = "https://www.linkedin.com/in/mayukh-chr/",icon = "linkedin"},
-    {name = "spotify", url = "https://open.spotify.com/user/zuumtdcue8fsfcq8owwju8i8x?si=8c3c8744363f4d95", icon = "spotify"},
-    {name = "twitter", url = "https://twitter.com/mayukh_chr", icon = "twitter"},
+    {name = "spotify", url = "https://open.spotify.com/user/zuumtdcue8fsfcq8owwju8i8x?si=8c3c8744363f4d95", icon = "spotify"}
 ]
 
 custom_css = []
