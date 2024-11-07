@@ -1,12 +1,13 @@
 +++
-title = "Project 4"
-description = "Example description with a lot of words but without any meaning. Why use lorem ipsum when you can just write a lot of text that has no underlying meaning?"
+title = "Edu review"
+description = "AI enabled review system for faculties "
 weight = 1
 
-draft = true
+draft = false
 
 [extra]
-remote_image = "https://images.unsplash.com/photo-1620121692029-d088224ddc74?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
-+++
+local_image = "/projects/project_4.jpg"
+link_to = "https://github.com/mayukh-chr/edu-review"
 
-Example project page
+
++++
