@@ -1,5 +1,5 @@
 +++
-title = "caption"
+title = "Image captioner"
 description = "LLM based photo-tagger, models from huggingface"
 weight = 1
 
