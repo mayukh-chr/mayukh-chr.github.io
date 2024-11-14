@@ -33,4 +33,4 @@ $$ to \space this $$
 
 &emsp; &emsp; I skimmed through the next two parts of the book and, although I’m very interested in continuing the project, I feel I'll end up with the same feelings after finishing it. I attempted to implement multithreading to speed up rendering, but I struggled with thread synchronization during rendering. I’d love to try implementing the project with [CUDA](https://developer.nvidia.com/blog/accelerated-ray-tracing-cuda/) someday when I have access to the necessary hardware.
 
-&emsp; &emsp; I do want to work in low level systems wiht C++ (or even rust), because in my opinion that's a domain it has a slow developmental cycle a lot of memory sensitive procedures, making sure the end product is as tight as possible in terms of response times and memory handling. 
+&emsp; &emsp; I do want to work in low level systems with C++ (or even rust), because in my opinion that's a domain it has a slow developmental cycle a lot of memory sensitive procedures, making sure the end product is as tight as possible in terms of response times and memory handling. 
