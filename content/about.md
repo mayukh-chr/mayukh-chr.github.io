@@ -18,4 +18,4 @@ I'm currenty studying Computer Science at the [Manipal Academy of Higher Educati
 Feel free to contact me at:\
 
 
-<p style="font-family:courier">mayukh[dot]mitblr2022[at]learner.manipal.edu</p>
+<p style="font-family:courier">contact[dot]mayukhsaha[at]gmail.com</p>
