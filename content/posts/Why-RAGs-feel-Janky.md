@@ -51,10 +51,3 @@ draft = false
 
 &emsp; &emsp; RAG systems leverage this same capability. By feeding LLMs concatenated text that includes both the retrieved context and the user's question, we're essentially recreating the human experience of consulting multiple sources to answer a question. The "jankiness" disappears when we realize that the LLM's training has prepared it to handle exactly this type of unstructured input.
 
-# Future Directions
-
-&emsp; &emsp; As I continue developing Cravings and exploring the RAG landscape, I'm beginning to appreciate the elegance in this apparent simplicity. While more sophisticated approaches using structured data and formal protocols are emerging, the fundamental insight remains: sometimes the most effective solution is the one that works with the natural capabilities of your tools rather than fighting against them.
-
-&emsp; &emsp; This experience has taught me that in the age of LLMs, our traditional notions of "clean" code and structured data need to evolve. The future might belong to systems that embrace the messy, unstructured nature of human language rather than trying to force everything into rigid schemas. After all, if concatenated strings can power intelligent recipe recommendations, maybe there's something to be said for keeping things simple.
-
-&emsp; &emsp; Sometimes, the most profound technologies are the ones that make the complex appear effortlessly simple—even if they feel a little janky at first glance.
