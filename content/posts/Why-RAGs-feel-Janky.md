@@ -1,7 +1,7 @@
 +++
 title = "Why RAGs feel janky, yet it makes sense"
 date = "2025-07-06"
-draft = true
+draft = false
 +++
 
 
