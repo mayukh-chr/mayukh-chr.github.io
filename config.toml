@@ -1,7 +1,7 @@
 base_url = "/"
 title = "mayukh_chr"
 build_search_index = false
-generate_feed = true
+generate_feeds = true
 compile_sass = true
 minify_html = true
 
