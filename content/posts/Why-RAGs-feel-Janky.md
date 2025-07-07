@@ -1,11 +1,11 @@
 +++
-title = "Why RAGs feel janky, yet it makes sense"
+title = "Why RAGs Feel Janky, Yet They Work"
 date = "2025-07-06"
 draft = false
 +++
 
 
-# Why RAGs Feel Janky, Yet They Work
+# Introduction
 
 &emsp; &emsp; After years of working in backend development, I recently dove back into the ML and LLM space to build **Cravings**, a lightweight RAG (Retrieval-Augmented Generation) chatbot that suggests recipes based on how you're feeling. Using Google Gemini API's free-tier Flash models, a Qdrant vector database hosted on GCP, FastEmbed for local text embedding, and a FastAPI backend, I was expecting something... more sophisticated under the hood. What I found instead was surprisingly simple: the retrieved data was just **concatenated strings** fed directly to the LLM. No fancy JSON protocols, no structured schemas, just plain text mashed together and handed off to the model.
 
