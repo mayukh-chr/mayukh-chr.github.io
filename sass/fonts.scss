@@ -55,9 +55,26 @@
 }
 
 @font-face {
-  font-family: 'Quicksand';
+  font-family: 'Menlo';
   font-style: normal;
   font-weight: 700;
-  src: url('../fonts/Quicksand/Quicksand-SemiBold.ttf'), local('ttf');
+  src: url('../fonts/Menlo/Menlo-SemiBold.ttf'), local('ttf');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Menlo';
+  letter-spacing: -40px;
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/Menlo/Menlo-Regular.ttf'), local('ttf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Menlo';
+  letter-spacing: -2px;
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/Menlo/Menlo-Bold.ttf'), local('ttf');
   font-display: swap;
 }
